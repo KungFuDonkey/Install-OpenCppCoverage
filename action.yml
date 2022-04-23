@@ -13,6 +13,7 @@ runs:
   using: "composite"
   steps:
     - name: download-OpenCppCoverage
+      shell: bash
       env:
         working-directory: ${{ inputs.install-folser }}
       run: |
