@@ -1,0 +1,12 @@
+name: 'install OpenCppCoverage'
+description: 'Installs OpenCppCoverage on github actions'
+inputs:
+  install-folder:
+    description: 'The designated install folder'
+    required: true
+    default: 'C:\Program Files (x86)'
+outputs:
+  OpenCppCoverage-exe-path:
+    description: 'The path to the OpenCppCoverage tool'
+runs: |
+  echo "OpenCppCoverage file path: ${{ steps.install-folder }}"
