@@ -20,9 +20,8 @@ runs:
         target: ${{ inputs.install-folder }}
     - name: unzip-OpenCppCoverage
       shell: bash
-      env: 
-        working-directory: ${{ inputs.install-folder }}
       run: |
+        cd "${{ inputs.install-folder }}"
         dir
         tar -xf OpenCppCoverage.tar
         dir
