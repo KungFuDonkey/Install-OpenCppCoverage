@@ -15,9 +15,11 @@ runs:
     - name: install-OpenCppCoverage
       shell: bash
       env:
+        working-directory: ${{ inputs.install-folder }}
         INPUT_FOLDER: ${{ inputs.install-folder }}
       run: |
         echo "Install folder = $INPUT_NAME"
+        git clone https://github.com/KungFuDonkey/OpenCppCoverageBinaries.git
         EXE_PATH="$INPUT_FOLDER\\OpenCppCoverage\\OpenCppCoverage.exe"
         echo "::set-output name=OpenCppCoverage-exe-path::$EXE_PATH"
         echo "Exe path: $EXE_PATH"
