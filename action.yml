@@ -54,5 +54,6 @@ runs:
         EXE_PATH="$INPUT_FOLDER\\OpenCppCoverage\\OpenCppCoverage.exe"
         echo "::set-output name=OpenCppCoverage-exe-path::$EXE_PATH"
         echo "Exe path: $EXE_PATH"
+        echo "${HOME}/.local/bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
   
 
