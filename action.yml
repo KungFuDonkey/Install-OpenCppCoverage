@@ -31,12 +31,6 @@ runs:
       uses: andstor/file-existence-action@v1
       with:
         files: "${{inputs.install-folder}}\\OpenCppCoverage\\OpenCppCoverage.exe"
-
-    - name: check-OpenCppCoverage
-      shell: bash
-      if: steps.check_files.outputs.files_exists == 'true'
-      # Only runs if all of the files exists
-      run: echo All files exists!
       
     - name: check-OpenCppCoverage-missing
       shell: bash
@@ -48,12 +42,18 @@ runs:
     - name: export-OpenCppCoverage-path
       shell: bash
       env:
-        working-directory: ${{ inputs.install-folder }}
         INPUT_FOLDER: ${{ inputs.install-folder }}
       run: |
         EXE_PATH="$INPUT_FOLDER\\OpenCppCoverage\\OpenCppCoverage.exe"
+        echo "Exe path found: $EXE_PATH"
         echo "::set-output name=OpenCppCoverage-exe-path::$EXE_PATH"
-        echo "Exe path: $EXE_PATH"
+        echo "Setting PATH variable for console usage"
         echo "$INPUT_FOLDER\\OpenCppCoverage" >> $GITHUB_PATH
+        echo "Succesfully installed OpenCppCoverage"
+    
+    - name: try-use-of-opencppcoverage
+      shell: bash
+      run: opencppcoverage
+      
   
 
