@@ -18,7 +18,7 @@ runs:
         working-directory: ${{ inputs.install-folder }}
       run: |
         cd "${{ inputs.install-folder }}"
-        curl -O "${{ inputs.install-folder }}" -L https://github.com/KungFuDonkey/OpenCppCoverageBinaries/releases/download/v0.9.9.0/OpenCppCoverage.tar
+        curl -O "${{ inputs.install-folder }}" -L "https://github.com/KungFuDonkey/OpenCppCoverageBinaries/releases/download/v0.9.9.0/OpenCppCoverage.tar"
     - name: unzip-OpenCppCoverage
       shell: bash
       env:
