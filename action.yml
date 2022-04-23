@@ -18,16 +18,25 @@ runs:
       with:
         url: "https://github.com/KungFuDonkey/OpenCppCoverageBinaries/releases/download/v0.9.9.0/OpenCppCoverage.tar"
         target: ${{ inputs.install-folder }}
+
     - name: unzip-OpenCppCoverage
       shell: bash
       run: |
         cd "${{ inputs.install-folder }}"
         tar -xf OpenCppCoverage.tar
         rm OpenCppCoverage.tar
-    - name: check-OpenCppCoverage
+
+    - name: search-OpenCppCoverage
+      id: check_files
       uses: andstor/file-existence-action@v1
       with:
         files: "${{inputs.install-folder}}\OpenCppCoverage\OpenCppCoverage.exe"
+
+    - name: check-OpenCppCoverage
+      if: steps.check_files.outputs.files_exists == 'true'
+      # Only runs if all of the files exists
+      run: echo All files exists!
+      
     - name: export-OpenCppCoverage-path
       shell: bash
       env:
