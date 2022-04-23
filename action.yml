@@ -44,7 +44,7 @@ runs:
       env:
         INPUT_FOLDER: ${{ inputs.install-folder }}
       run: |
-        EXE_PATH="$INPUT_FOLDEROpenCppCoverage/OpenCppCoverage.exe"
+        EXE_PATH="${{ env.INPUT_FOLDER }}OpenCppCoverage/OpenCppCoverage.exe"
         echo "Exe path found: $EXE_PATH"
         echo "::set-output name=OpenCppCoverage-exe-path::$EXE_PATH"
         echo "Setting PATH variable for console usage"
