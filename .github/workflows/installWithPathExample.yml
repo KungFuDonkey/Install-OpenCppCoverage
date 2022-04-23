@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ./
       with: 
-        install-folder: "C:"
+        install-folder: 'C:\'
 
     
     
