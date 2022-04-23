@@ -15,7 +15,7 @@ runs:
     - run: echo "Install folder = ${{ inputs.install-folder}}"
       shell: bash
     - id: get-exe-path
-      run: echo "::set-output name=OpenCppCoverage-exe-path::$(echo ${{inputs.install-folder}}/OpenCppCoverage/OpenCppCoverage.exe"
+      run: echo "::set-output name=OpenCppCoverage-exe-path::$(echo ${{inputs.install-folder}}/OpenCppCoverage/OpenCppCoverage.exe)"
       shell: bash
   
 
