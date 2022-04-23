@@ -22,14 +22,14 @@ runs:
       shell: bash
       run: |
         cd "${{ inputs.install-folder }}"
-        dir
         tar -xf OpenCppCoverage.tar
-        dir
+        del OpenCppCoverage.tar
     - name: check-OpenCppCoverage
       shell: bash
-      env: 
-        working-directory: ${{ inputs.install-folder }}\OpenCppCoverage
-      run: dir
+      run: |
+        cd "${{ inputs.install-folder }}\OpenCppCoverage"
+        dir
+        ./OpenCppCoverage.exe
     - name: export-OpenCppCoverage-path
       shell: bash
       env:
