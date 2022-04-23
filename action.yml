@@ -49,11 +49,7 @@ runs:
         echo "::set-output name=OpenCppCoverage-exe-path::$EXE_PATH"
         echo "Setting PATH variable for console usage"
         echo "$INPUT_FOLDER\\OpenCppCoverage" >> $GITHUB_PATH
-        echo "Succesfully installed OpenCppCoverage"
-    
-    - name: try-use-of-opencppcoverage
-      shell: bash
-      run: opencppcoverage
+        echo "Succesfully installed OpenCppCoverage to $INPUT_FOLDER"
       
   
 
