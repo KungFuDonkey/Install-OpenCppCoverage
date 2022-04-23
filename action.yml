@@ -12,10 +12,14 @@ outputs:
 runs: 
   using: "composite"
   steps:
-    - run: echo "Install folder = ${{ inputs.install-folder}}"
+    - name: install-OpenCppCoverage
       shell: bash
-    - id: get-exe-path
-      run: echo "::set-output name=OpenCppCoverage-exe-path::$(echo ${{inputs.install-folder}}/OpenCppCoverage/OpenCppCoverage.exe)"
-      shell: bash
+      env:
+        INPUT_FOLDER: ${{ inputs.install-folder }}
+      run: |
+        echo "Install folder = $INPUT_NAME"
+        EXE_PATH="$INPUT_FOLDER\\OpenCppCoverage\\OpenCppCoverage.exe"
+        echo "::set-output name=OpenCppCoverage-exe-path::$EXE_PATH"
+        echo "Exe path: $EXE_PATH"
   
 
