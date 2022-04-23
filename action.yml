@@ -12,13 +12,12 @@ outputs:
 runs: 
   using: "composite"
   steps:
-    - name: download-OpenCppCoverage
-      shell: bash
+    - name: wget
       env:
         working-directory: ${{ inputs.install-folder }}
-      run: |
-        cd "${{ inputs.install-folder }}"
-        curl -O "${{ inputs.install-folder }}" -L "https://github.com/KungFuDonkey/OpenCppCoverageBinaries/releases/download/v0.9.9.0/OpenCppCoverage.tar"
+      uses: wei/wget@v1
+      with:
+        args: -O "${{ inputs.install-folder }}\OpenCppCoverage.tar" "https://github.com/KungFuDonkey/OpenCppCoverageBinaries/releases/download/v0.9.9.0/OpenCppCoverage.tar
     - name: unzip-OpenCppCoverage
       shell: bash
       env:
