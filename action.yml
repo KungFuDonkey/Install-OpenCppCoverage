@@ -9,4 +9,4 @@ outputs:
   OpenCppCoverage-exe-path:
     description: 'The path to the OpenCppCoverage tool'
 runs: |
-  echo "OpenCppCoverage file path: ${{ steps.install-folder }}"
+  echo "OpenCppCoverage file path: ${{ install-folder }}"
