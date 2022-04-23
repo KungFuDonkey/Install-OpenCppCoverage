@@ -23,7 +23,8 @@ runs:
       run: |
         cd "${{ inputs.install-folder }}"
         tar -xf OpenCppCoverage.tar
-        del OpenCppCoverage.tar
+        rm OpenCppCoverage.tar
+        dir
     - name: check-OpenCppCoverage
       shell: bash
       run: |
