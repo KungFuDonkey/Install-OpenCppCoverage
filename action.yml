@@ -24,13 +24,15 @@ runs:
         cd "${{ inputs.install-folder }}"
         tar -xf OpenCppCoverage.tar
         rm OpenCppCoverage.tar
-        dir
     - name: check-OpenCppCoverage
       shell: bash
       run: |
-        cd "${{ inputs.install-folder }}\OpenCppCoverage"
-        dir
-        ./OpenCppCoverage.exe
+        if exists "${{ inputs.install-folder }}\\OpenCppCoverage\\OpenCppCoverage.exe" (
+          echo "Exe created correctly"
+        )
+        else (
+          echo "EXE FAILED"
+        )
     - name: export-OpenCppCoverage-path
       shell: bash
       env:
