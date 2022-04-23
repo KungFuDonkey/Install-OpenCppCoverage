@@ -1,4 +1,4 @@
-name: Install example
+name: Install example with path
 
 on:
   push:
