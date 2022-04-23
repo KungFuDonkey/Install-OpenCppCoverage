@@ -30,13 +30,13 @@ runs:
       id: check_files
       uses: andstor/file-existence-action@v1
       with:
-        files: "${{inputs.install-folder}}\OpenCppCoverage\OpenCppCoverage.exe"
+        files: "${{inputs.install-folder}}\\OpenCppCoverage\\OpenCppCoverage.exe"
 
     - name: check-OpenCppCoverage
       if: steps.check_files.outputs.files_exists == 'true'
       # Only runs if all of the files exists
       run: echo All files exists!
-      
+
     - name: export-OpenCppCoverage-path
       shell: bash
       env:
