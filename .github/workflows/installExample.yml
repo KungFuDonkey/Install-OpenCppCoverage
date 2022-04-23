@@ -1,0 +1,17 @@
+name: Install example
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  
+  workflow_dispatch:
+
+jobs:
+  install:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: ./
+    
