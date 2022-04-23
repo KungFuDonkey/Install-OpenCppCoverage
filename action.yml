@@ -17,7 +17,7 @@ runs:
       env:
         working-directory: ${{ inputs.install-folser }}
       run: |
-        wget -o OpenCppCoverage.tar https://github.com/KungFuDonkey/OpenCppCoverageBinaries/releases/download/v0.9.9.0/OpenCppCoverage.tar
+        curl https://github.com/KungFuDonkey/OpenCppCoverageBinaries/releases/download/v0.9.9.0/OpenCppCoverage.tar
         tar -xf OpenCppCoverage.tar
     - name: check-OpenCppCoverage
       shell: bash
