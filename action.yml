@@ -16,7 +16,7 @@ runs:
       env:
         working-directory: ${{ inputs.install-folder }}
       shell: bash
-      run: C:\msys64\usr\bin\wget.exe -O "${{ inputs.install-folder }}\OpenCppCoverage.tar" "https://github.com/KungFuDonkey/OpenCppCoverageBinaries/releases/download/v0.9.9.0/OpenCppCoverage.tar
+      run: C:\msys64\usr\bin\wget.exe -O "${{ inputs.install-folder }}\OpenCppCoverage.tar" "https://github.com/KungFuDonkey/OpenCppCoverageBinaries/releases/download/v0.9.9.0/OpenCppCoverage.tar"
     - name: unzip-OpenCppCoverage
       shell: bash
       env:
