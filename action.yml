@@ -12,7 +12,7 @@ outputs:
 runs: 
   using: "composite"
   steps:
-    - name: install-OpenCppCoverage
+    - name: download-OpenCppCoverage
       shell: bash
       env:
         working-directory: ${{ inputs.install-folder }}
@@ -20,8 +20,18 @@ runs:
       run: |
         echo "Install folder = $INPUT_NAME"
         git clone https://github.com/KungFuDonkey/OpenCppCoverageBinaries.git
-        cd OpenCppCoverage
-        ./OpenCppCoverage.exe
+    - name: check-OpenCppCoverage
+      shell: bash
+      env: 
+        working-directory: ${{ inputs.install-folder }}\OpenCppCoverage
+      run: |
+        .\OpenCppCoverage.exe
+    - name: export-OpenCppCoverage-path
+      shell: bash
+      env:
+        working-directory: ${{ inputs.install-folder }}
+        INPUT_FOLDER: ${{ inputs.install-folder }}
+      run: |
         EXE_PATH="$INPUT_FOLDER\\OpenCppCoverage\\OpenCppCoverage.exe"
         echo "::set-output name=OpenCppCoverage-exe-path::$EXE_PATH"
         echo "Exe path: $EXE_PATH"
