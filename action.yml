@@ -27,7 +27,7 @@ runs:
     - name: check-OpenCppCoverage
       shell: bash
       run: |
-        if exists "${{ inputs.install-folder }}\\OpenCppCoverage\\OpenCppCoverage.exe" echo Exe created correctly else echo "EXE FAILED"
+        if exists "${{ inputs.install-folder }}\OpenCppCoverage\OpenCppCoverage.exe" echo Exe created correctly
     - name: export-OpenCppCoverage-path
       shell: bash
       env:
