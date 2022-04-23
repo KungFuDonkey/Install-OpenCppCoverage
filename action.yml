@@ -17,8 +17,7 @@ runs:
       name: Download the file
       with:
         url: "https://github.com/KungFuDonkey/OpenCppCoverageBinaries/releases/download/v0.9.9.0/OpenCppCoverage.tar"
-        target: public/
-        auto-match: true
+        target: ${{ inputs.install-folder }}
     - name: unzip-OpenCppCoverage
       shell: bash
       run: |
