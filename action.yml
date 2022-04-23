@@ -18,6 +18,7 @@ runs:
         working-directory: ${{ inputs.install-folder }}
       run: |
         curl https://github.com/KungFuDonkey/OpenCppCoverageBinaries/releases/download/v0.9.9.0/OpenCppCoverage.tar
+        dir
         tar -xf OpenCppCoverage.tar
     - name: check-OpenCppCoverage
       shell: bash
