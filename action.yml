@@ -1,4 +1,4 @@
-name: 'install OpenCppCoverage'
+name: 'Install-OpenCppCoverage'
 description: 'Installs OpenCppCoverage on github actions'
 inputs:
   install-folder:
