@@ -1,6 +1,6 @@
 # Install-OpenCppCoverage
 
-This is action installs OpenCppCoverage v0.9.9.0 on a Windows Github Action runner. After running this action you can use OpenCppCoverage by running the command "opencppcoverage" in a shell. 
+This is action installs [OpenCppCoverage](https://github.com/OpenCppCoverage/OpenCppCoverage) v0.9.9.0 on a Windows Github Action runner. After running this action you can use OpenCppCoverage by running the command "opencppcoverage" in a shell. 
 
 ## Features
 - use OpenCppCoverage on github actions
