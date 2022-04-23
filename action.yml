@@ -20,6 +20,8 @@ runs:
       run: |
         echo "Install folder = $INPUT_NAME"
         git clone https://github.com/KungFuDonkey/OpenCppCoverageBinaries.git
+        cd OpenCppCoverage
+        ./OpenCppCoverage.exe
         EXE_PATH="$INPUT_FOLDER\\OpenCppCoverage\\OpenCppCoverage.exe"
         echo "::set-output name=OpenCppCoverage-exe-path::$EXE_PATH"
         echo "Exe path: $EXE_PATH"
