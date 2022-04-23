@@ -14,10 +14,10 @@ runs:
   steps:
     - name: download-OpenCppCoverage
       env:
-        working-directory: ${{ inputs.install-folder }}
-      uses: actions/checkout@v2
-      with:
-        repository: KungFuDonkey/OpenCppCoverageBinaries
+        working-directory: ${{ inputs.install-folser }}
+      run: |
+        wget -o OpenCppCoverage.tar https://github.com/KungFuDonkey/OpenCppCoverageBinaries/releases/download/v0.9.9.0/OpenCppCoverage.tar
+        tar -xf OpenCppCoverage.tar
     - name: check-OpenCppCoverage
       shell: bash
       env: 
