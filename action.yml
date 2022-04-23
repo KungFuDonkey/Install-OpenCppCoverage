@@ -13,19 +13,16 @@ runs:
   using: "composite"
   steps:
     - name: download-OpenCppCoverage
-      shell: bash
       env:
         working-directory: ${{ inputs.install-folder }}
-        INPUT_FOLDER: ${{ inputs.install-folder }}
-      run: |
-        echo "Install folder = $INPUT_NAME"
-        git clone https://github.com/KungFuDonkey/OpenCppCoverageBinaries.git
+      uses: actions/checkout@v2
+      with:
+        repository: KungFuDonkey/OpenCppCoverageBinaries
     - name: check-OpenCppCoverage
       shell: bash
       env: 
         working-directory: ${{ inputs.install-folder }}\OpenCppCoverage
-      run: |
-        .\OpenCppCoverage.exe
+      run: dir
     - name: export-OpenCppCoverage-path
       shell: bash
       env:
