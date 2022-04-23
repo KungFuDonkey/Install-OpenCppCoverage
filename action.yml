@@ -8,5 +8,14 @@ inputs:
 outputs:
   OpenCppCoverage-exe-path:
     description: 'The path to the OpenCppCoverage tool'
-runs: |
-  echo "OpenCppCoverage file path: ${{ inputs.install-folder }}"
+
+runs: 
+  using: "composite"
+  steps:
+    - run: echo "Install folder = ${{ inputs.install-folder}}"
+      shell: bash
+    - id: get-exe-path
+      run: echo "::set-output name=OpenCppCoverage-exe-path::$(echo ${{inputs.install-folder}}/OpenCppCoverage/OpenCppCoverage.exe"
+      shell: bash
+  
+
